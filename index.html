@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Che Faris | Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0f172a;
+  color:white;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 50px;
+  position:fixed;
+  width:100%;
+  top:0;
+  background:#0f172a;
+  border-bottom:1px solid #1e293b;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero p{
+  color:#94a3b8;
+  margin-top:10px;
+}
+
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#38bdf8;
+  border:none;
+  border-radius:5px;
+  color:black;
+  text-decoration:none;
+}
+
+section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+/* ABOUT */
+.about p{
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.skills span{
+  background:#1e293b;
+  padding:10px 15px;
+  border-radius:5px;
+}
+
+/* PROJECTS */
+.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  border-top:1px solid #1e293b;
+  color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b>Faris</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Hi, I'm Che Faris 👋</h1>
+  <p>Information Technology Student | Full Stack Developer</p>
+  <a class="btn" href="#projects">View My Work</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    IT student at Universiti Teknologi PETRONAS (UTP) passionate about
+    full-stack development, system design, and building real-world applications.
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2><br>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>PHP</span>
+    <span>MySQL</span>
+    <span>Python</span>
+    <span>Git</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2><br>
+  <div class="projects">
+
+    <div class="card">
+      <h3>Student System</h3>
+      <p>Registration system using PHP & MySQL.</p>
+    </div>
+
+    <div class="card">
+      <h3>Weather Analysis</h3>
+      <p>Python data analysis project for climate data.</p>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>This portfolio built using HTML & CSS.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: yourname@email.com</p>
+  <p>GitHub: github.com/yourusername</p>
+</section>
+
+<footer>
+  © 2026 Che Faris | Portfolio
+</footer>
+
+</body>
+</html>
