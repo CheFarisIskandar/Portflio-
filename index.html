@@ -3,200 +3,1111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Che Faris | Portfolio</title>
-
+<title>Che Faris Iskandar — IT Student & Aspiring Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-  scroll-behavior:smooth;
-}
+  :root {
+    --emerald: #1a5c45;
+    --emerald-mid: #237a5c;
+    --emerald-light: #e8f2ee;
+    --emerald-pale: #f3f8f6;
+    --gold: #b8924a;
+    --gold-light: #f5edd8;
+    --ink: #1a1f1c;
+    --ink-muted: #4a5550;
+    --ink-faint: #8a9590;
+    --surface: #ffffff;
+    --bg: #f7faf8;
+    --border: rgba(26,92,69,0.12);
+    --rule: rgba(26,92,69,0.08);
+  }
 
-body{
-  background:#0f172a;
-  color:white;
-}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* NAV */
-nav{
-  display:flex;
-  justify-content:space-between;
-  padding:20px 50px;
-  position:fixed;
-  width:100%;
-  top:0;
-  background:#0f172a;
-  border-bottom:1px solid #1e293b;
-}
+  html { scroll-behavior: smooth; }
 
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:20px;
-}
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7%;
+    height: 58px;
+  }
 
-.hero h1{
-  font-size:50px;
-}
+  .nav-logo {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--emerald);
+    letter-spacing: 0.01em;
+  }
 
-.hero p{
-  color:#94a3b8;
-  margin-top:10px;
-}
+  .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+  }
 
-.btn{
-  margin-top:20px;
-  padding:10px 20px;
-  background:#38bdf8;
-  border:none;
-  border-radius:5px;
-  color:black;
-  text-decoration:none;
-}
+  .nav-links a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.18s;
+  }
 
-section{
-  padding:80px 20px;
-  max-width:1000px;
-  margin:auto;
-}
+  .nav-links a:hover { color: var(--emerald); }
 
-/* ABOUT */
-.about p{
-  color:#cbd5e1;
-  line-height:1.6;
-}
+  /* ── HERO ── */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 80px 7% 70px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 40px;
+    align-items: center;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
 
-/* SKILLS */
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-}
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--emerald-light);
+    color: var(--emerald);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
 
-.skills span{
-  background:#1e293b;
-  padding:10px 15px;
-  border-radius:5px;
-}
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--emerald);
+    border-radius: 50%;
+  }
 
-/* PROJECTS */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
+  .hero h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 2.85rem;
+    font-weight: 400;
+    line-height: 1.12;
+    color: var(--ink);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
 
-.card{
-  background:#1e293b;
-  padding:20px;
-  border-radius:10px;
-  transition:0.3s;
-}
+  .hero h1 em {
+    color: var(--emerald);
+    font-style: normal;
+  }
 
-.card:hover{
-  transform:translateY(-5px);
-}
+  .hero-sub {
+    color: var(--ink-muted);
+    font-size: 1rem;
+    max-width: 460px;
+    line-height: 1.6;
+    margin-bottom: 28px;
+    font-weight: 400;
+  }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-}
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
 
-footer{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid #1e293b;
-  color:#94a3b8;
-}
+  .hero-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+
+  .hero-meta-item svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--emerald-mid);
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 10px 24px;
+    background: var(--emerald);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.18s, transform 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: #154d3a;
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    display: inline-block;
+    padding: 10px 24px;
+    background: transparent;
+    color: var(--emerald);
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1.5px solid var(--emerald);
+    letter-spacing: 0.02em;
+    transition: background 0.18s, color 0.18s, transform 0.15s;
+  }
+
+  .btn-ghost:hover {
+    background: var(--emerald-light);
+    transform: translateY(-1px);
+  }
+
+  .hero-photo-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .hero-photo {
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    border: 3px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+  }
+
+  .hero-photo-accent {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 190px;
+    height: 190px;
+    border: 2px solid var(--emerald-light);
+    border-radius: 6px;
+    z-index: -1;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page-body {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 7%;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 0 60px;
+  }
+
+  .main-col { padding: 60px 0; }
+  .side-col { padding: 60px 0; }
+
+  /* ── SECTION HEADERS ── */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 18px;
+    background: var(--emerald);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .section-label h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  /* ── ABOUT ── */
+  .about-text {
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    max-width: 620px;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 50px 0;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 14px 1fr;
+    gap: 0 20px;
+    padding-bottom: 36px;
+    position: relative;
+  }
+
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5px;
+  }
+
+  .tl-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--emerald);
+    flex-shrink: 0;
+    border: 2px solid var(--emerald-light);
+    outline: 1.5px solid var(--emerald);
+  }
+
+  .tl-line {
+    width: 1px;
+    flex: 1;
+    background: var(--border);
+    margin-top: 6px;
+  }
+
+  .tl-item:last-child .tl-line { display: none; }
+
+  .tl-content {}
+
+  .tl-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+  }
+
+  .tl-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .tl-date {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    font-weight: 500;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    padding-top: 2px;
+  }
+
+  .tl-org {
+    font-size: 0.82rem;
+    color: var(--emerald-mid);
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .tl-cgpa {
+    display: inline-block;
+    background: var(--gold-light);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    letter-spacing: 0.03em;
+  }
+
+  .tl-desc {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  .tl-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tl-list li {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  .tl-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--emerald-mid);
+    font-size: 0.7rem;
+  }
+
+  /* ── PROJECTS ── */
+  .projects { display: flex; flex-direction: column; gap: 20px; }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 24px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+  }
+
+  .project-card:hover {
+    border-color: var(--emerald-mid);
+    box-shadow: 0 4px 16px rgba(26,92,69,0.06);
+  }
+
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 6px;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .project-year {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    font-weight: 500;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  .project-desc {
+    font-size: 0.85rem;
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    line-height: 1.65;
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .tag {
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 3px 9px;
+    border-radius: 2px;
+    background: var(--emerald-pale);
+    color: var(--emerald);
+    border: 1px solid var(--emerald-light);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 10px;
+  }
+
+  .link-btn {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 3px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .link-btn-solid {
+    background: var(--emerald);
+    color: #fff;
+  }
+
+  .link-btn-solid:hover { background: #154d3a; }
+
+  .link-btn-outline {
+    background: transparent;
+    color: var(--emerald);
+    border: 1.5px solid var(--border);
+  }
+
+  .link-btn-outline:hover {
+    background: var(--emerald-light);
+    border-color: var(--emerald);
+  }
+
+  /* ── SIDEBAR ── */
+  .side-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 22px 22px;
+    margin-bottom: 24px;
+  }
+
+  .side-card-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--ink-faint);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* Skills */
+  .skill-group { margin-bottom: 18px; }
+  .skill-group:last-child { margin-bottom: 0; }
+
+  .skill-group-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-faint);
+    margin-bottom: 8px;
+  }
+
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .chip {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  /* Contact */
+  .contact-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .contact-row:last-child { border-bottom: none; }
+
+  .contact-row svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--emerald);
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-label {
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1px;
+  }
+
+  .contact-value {
+    font-size: 0.83rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+
+  .contact-value:hover { color: var(--emerald); }
+
+  /* References */
+  .ref-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .ref-item:first-child { padding-top: 0; }
+  .ref-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .ref-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .ref-role {
+    font-size: 0.78rem;
+    color: var(--emerald-mid);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .ref-inst {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    margin-bottom: 6px;
+  }
+
+  .ref-contact a {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    text-decoration: none;
+    display: block;
+    line-height: 1.7;
+  }
+
+  .ref-contact a:hover { color: var(--emerald); }
+
+  /* Seeking badge in sidebar */
+  .seeking-card {
+    background: var(--emerald);
+    border-radius: 6px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+
+  .seeking-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 6px;
+  }
+
+  .seeking-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .seeking-period {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    padding: 28px;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 50px 6% 50px;
+    }
+    .hero-photo-wrap { display: none; }
+    .page-body {
+      grid-template-columns: 1fr;
+      padding: 0 6%;
+    }
+    .side-col { padding-top: 0; }
+    nav { padding: 0 6%; }
+    .nav-links { gap: 16px; }
+    .nav-links a { font-size: 0.75rem; }
+  }
+
+  @media (max-width: 580px) {
+    .hero h1 { font-size: 2.1rem; }
+    .nav-links { display: none; }
+    .project-header { flex-direction: column; gap: 4px; }
+  }
 </style>
 </head>
-
 <body>
 
+<!-- NAV -->
 <nav>
-  <div><b>Faris</b></div>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div class="nav-logo">Che Faris Iskandar</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <h1>Hi, I'm Che Faris 👋</h1>
-  <p>Information Technology Student | Full Stack Developer</p>
-  <a class="btn" href="#projects">View My Work</a>
+<div style="background: var(--surface); border-bottom: 1px solid var(--border);">
+  <div class="hero">
+    <div>
+      <div class="hero-eyebrow">Open to Internship · Sept 2026 – Apr 2027</div>
+      <h1>Che Faris Iskandar<br><em>Che Azizi</em></h1>
+      <p class="hero-sub">Information Technology undergraduate student at Universiti Teknologi PETRONAS, building experience in full-stack development, networks, and data-driven systems.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Ipoh, Perak, Malaysia
+        </div>
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.91 14a16 16 0 006.09 6.09l.41-.41a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          +60 11-3277 1277
+        </div>
+        <div class="hero-meta-item">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          che_22012057@utp.edu.my
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="https://github.com/CheFarisIskandar" target="_blank" rel="noopener noreferrer" class="btn-ghost">GitHub Profile ↗</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="che.jpg" alt="Che Faris Iskandar" class="hero-photo">
+      <div class="hero-photo-accent"></div>
+    </div>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-  <h2>About Me</h2>
-  <p>
-    IT student at Universiti Teknologi PETRONAS (UTP) passionate about
-    full-stack development, system design, and building real-world applications.
-  </p>
-</section>
+<!-- MAIN CONTENT -->
+<div class="page-body">
 
-<!-- SKILLS -->
-<section id="skills">
-  <h2>Skills</h2><br>
-  <div class="skills">
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>PHP</span>
-    <span>MySQL</span>
-    <span>Python</span>
-    <span>Git</span>
+  <!-- MAIN COLUMN -->
+  <div class="main-col">
+
+    <!-- ABOUT -->
+    <div id="about">
+      <div class="section-label"><h2>About</h2></div>
+      <p class="about-text">Ambitious and motivated Information Technology student with a strong interest in software engineering, system architecture, and innovative technology solutions. Familiar with full-stack web development, object-oriented programming, database management, and UI/UX design through academic projects and personal learning. Seeking an internship opportunity from September 2026 to April 2027 to gain hands-on industry experience, strengthen technical and problem-solving skills, and contribute in a collaborative environment.</p>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- EDUCATION -->
+    <div id="education">
+      <div class="section-label"><h2>Education</h2></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Universiti Teknologi PETRONAS</div>
+              <div class="tl-date">Current</div>
+            </div>
+            <div class="tl-org">Bachelor of Information Technology (Hons) · Minor in Corporate Management</div>
+            <div class="tl-cgpa">CGPA 3.01</div>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Universiti Teknologi PETRONAS</div>
+            </div>
+            <div class="tl-org">Foundation of Technology in Information Technology</div>
+            <div class="tl-cgpa">CGPA 2.86</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- PROJECTS -->
+    <div id="projects">
+      <div class="section-label"><h2>Academic Projects</h2></div>
+      <div class="projects">
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">Waste2Worth — Incentive-Based Recycling Platform</div>
+            <div class="project-year">Nov 2024</div>
+          </div>
+          <p class="project-desc">Web application with secure user registration, automated recycling weight tracking, dynamic point balance logic, and an admin dashboard built on session management protocols.</p>
+          <div class="project-stack">
+            <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Bootstrap</span>
+          </div>
+          <div class="project-links">
+            <a href="http://waste2worth.atwebpages.com/Login_page.html" target="_blank" class="link-btn link-btn-solid">Live Demo ↗</a>
+            <a href="https://github.com/CheFarisIskandar/Waste2Worth-Incentive-Based-Recycling-Platform" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-outline">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">SkyGuard Perak — Real-Time Aviation Tracking</div>
+            <div class="project-year">Oct 2024</div>
+          </div>
+          <p class="project-desc">Python script connecting to the OpenSky Network API to continuously pull live aircraft telemetry — transponder codes, barometric altitude, velocity — with custom error handling and structured logging.</p>
+          <div class="project-stack">
+            <span class="tag">Python</span><span class="tag">OpenSky API</span><span class="tag">JSON Parsing</span><span class="tag">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://skyguard-perak-iot-bwnzgbqp39rcxxfxrijyga.streamlit.app" target="_blank" class="link-btn link-btn-solid">Live Demo ↗</a>
+            <a href="https://github.com/CheFarisIskandar/SkyGuard-Perak-Real-Time-Aviation-Intelligence-Tracking-System" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-outline">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">Multi-Branch Enterprise Network Architecture</div>
+            <div class="project-year">Aug 2024</div>
+          </div>
+          <p class="project-desc">Simulated a full enterprise network with VLAN segmentation, ACL filtering, multi-area OSPF routing, DHCP pool distribution, and NAT configurations across multiple branches.</p>
+          <div class="project-stack">
+            <span class="tag">Cisco Packet Tracer</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">ACL</span><span class="tag">NAT</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/CheFarisIskandar/Multi-Branch-Enterprise-Network-Architecture-" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-solid">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-title">Electronic Device Pre-order System</div>
+            <div class="project-year">Feb 2024</div>
+          </div>
+          <p class="project-desc">Console-based ordering system in C++ applying OOP principles — array-based catalog management, input validation guards, and file stream output handling.</p>
+          <div class="project-stack">
+            <span class="tag">C++</span><span class="tag">OOP</span><span class="tag">File Handling</span><span class="tag">Data Validation</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/CheFarisIskandar/Electronic-Device-Preorder-System" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-solid">GitHub ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- EXPERIENCE -->
+    <div id="experience">
+      <div class="section-label"><h2>Experience & Leadership</h2></div>
+      <div class="timeline">
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Project Director — Discover UTP: Campus & Beyond</div>
+              <div class="tl-date">Sept 2024 – Present</div>
+            </div>
+            <div class="tl-org">UTPHost Club</div>
+            <ul class="tl-list">
+              <li>Directed an educational campus visit programme for 44 SMK Anderson students and teachers, managing full event scheduling and coordination.</li>
+              <li>Organised STEM activities including lab tours, hands-on engineering challenges, and technology workshops.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Secretary — UTPHost Retreat '26</div>
+              <div class="tl-date">May 2026 – Jun 2026</div>
+            </div>
+            <div class="tl-org">UTPHost Club</div>
+            <ul class="tl-list">
+              <li>Prepared 5 Minutes of Meeting documentation and formal project proposals for budget and venue approvals.</li>
+              <li>Developed event proposals and prepared eMemo documentation to obtain event and budget approvals from management within one month prior to the event.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Head of Logistics & F&B — Permainan Kita</div>
+              <div class="tl-date">Sept 2025 – Nov 2025</div>
+            </div>
+            <div class="tl-org">Google Developer Student Club (GDSC-UTP)</div>
+            <ul class="tl-list">
+              <li>Managed auditorium logistics, hardware supply procurement, and safety compliance documentation.</li>
+              <li>Supervised hospitality operations for all committee staff and participants throughout the event.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Committee Operational Technical — D.R.O.N.E 1.0 & 2.0</div>
+              <div class="tl-date">Jun 2025 – Apr 2026</div>
+            </div>
+            <div class="tl-org">AeroXpert</div>
+            <ul class="tl-list">
+              <li>Managed ground transport logistics for 108 visiting grade school students and teachers.</li>
+              <li>Supervised live drone flight segments in structured, safety-compliant settings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-dot-col">
+            <div class="tl-dot"></div>
+            <div class="tl-line"></div>
+          </div>
+          <div class="tl-content">
+            <div class="tl-header">
+              <div class="tl-title">Volunteer Usherette — UTP 25th Convocation</div>
+              <div class="tl-date">Oct 2025</div>
+            </div>
+            <div class="tl-org">Universiti Teknologi PETRONAS</div>
+            <ul class="tl-list">
+              <li>Managed guest flow, seating, and directions for 3000+ graduating students, families, and VIP dignitaries.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
-</section>
 
-<!-- PROJECTS -->
-<section id="projects">
-  <h2>Projects</h2><br>
-  <div class="projects">
+  <!-- SIDE COLUMN -->
+  <div class="side-col">
 
-    <div class="card">
-      <h3>Student System</h3>
-      <p>Registration system using PHP & MySQL.</p>
+    <!-- SEEKING INTERNSHIP -->
+    <div class="seeking-card">
+      <div class="seeking-label">Currently seeking</div>
+      <div class="seeking-title">Internship Position</div>
+      <div class="seeking-period">September 2026 — April 2027</div>
     </div>
 
-    <div class="card">
-      <h3>Weather Analysis</h3>
-      <p>Python data analysis project for climate data.</p>
+    <!-- SKILLS -->
+    <div class="side-card">
+  <div class="side-card-title">Technical Skills</div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Programming Languages</div>
+    <div class="skill-chips">
+      <span class="chip">Python</span>
+      <span class="chip">C++</span>
+      <span class="chip">R</span>
+      <span class="chip">PHP</span>
+      <span class="chip">JavaScript</span>
+      <span class="chip">Visual Basic</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Web & Design</div>
+    <div class="skill-chips">
+      <span class="chip">HTML</span>
+      <span class="chip">CSS</span>
+      <span class="chip">Figma</span>
+      <span class="chip">Canva Pro</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Databases & Data Analytics</div>
+    <div class="skill-chips">
+      <span class="chip">MySQL</span>
+      <span class="chip">phpMyAdmin</span>
+      <span class="chip">Excel</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Networking & CyberSecurity</div>
+    <div class="skill-chips">
+      <span class="chip">Cisco Packet Tracer</span>
+      <span class="chip">Huawei eNSP</span>
+      <span class="chip">Wireshark</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Languages</div>
+    <div class="skill-chips">
+      <span class="chip">Malay (Native)</span>
+      <span class="chip">English (Fluent)</span>
+    </div>
+  </div>
+
+  <div class="skill-group">
+    <div class="skill-group-label">Soft Skills</div>
+    <div class="skill-chips">
+      <span class="chip">Time Management</span>
+      <span class="chip">Task Coordination</span>
+      <span class="chip">Adaptable & Proactive</span>
+      <span class="chip">Team Collaboration</span>
+      <span class="chip">Problem Solving</span>
+      <span class="chip">Verbal & Written Communication</span>
+    </div>
+  </div>
+</div>
+
+    <!-- CONTACT -->
+    <div class="side-card" id="contact">
+      <div class="side-card-title">Contact</div>
+
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        <div>
+          <div class="contact-label">University</div>
+          <a href="mailto:che_22012057@utp.edu.my" class="contact-value">che_22012057@utp.edu.my</a>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        <div>
+          <div class="contact-label">Personal</div>
+          <a href="mailto:chefaris162@gmail.com" class="contact-value">chefaris162@gmail.com</a>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L9.91 14a16 16 0 006.09 6.09l.41-.41a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <div>
+          <div class="contact-label">Phone</div>
+          <a href="tel:+601132771277" class="contact-value">+60 11-3277 1277</a>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        <div>
+          <div class="contact-label">GitHub</div>
+          <a href="https://github.com/CheFarisIskandar" target="_blank" class="contact-value">CheFarisIskandar ↗</a>
+        </div>
+      </div>
+
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <a href="https://www.linkedin.com/in/che-faris-iskandar-a7671134a/" target="_blank" class="contact-value">Connect on LinkedIn ↗</a>
+        </div>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Portfolio Website</h3>
-      <p>This portfolio built using HTML & CSS.</p>
+    <!-- REFERENCES -->
+    <div class="side-card" id="references">
+      <div class="side-card-title">References</div>
+
+      <div class="ref-item">
+        <div class="ref-name">Ts. Saipunidzam Mahamad</div>
+        <div class="ref-role">Senior Lecturer, Dept. of Computing</div>
+        <div class="ref-inst">Universiti Teknologi PETRONAS</div>
+        <div class="ref-contact">
+          <a href="tel:+6053687408">+6053687408</a>
+          <a href="mailto:saipunidzam_mahamad@utp.edu.my">saipunidzam_mahamad@utp.edu.my</a>
+        </div>
+      </div>
+
+      <div class="ref-item">
+        <div class="ref-name">Shariza Mohamed Shuhidan</div>
+        <div class="ref-role">Advisor, UTPHost Club</div>
+        <div class="ref-inst">Universiti Teknologi PETRONAS</div>
+        <div class="ref-contact">
+          <a href="tel:+6053688242">+6053688242</a>
+          <a href="mailto:sharizs@utp.edu.my">sharizs@utp.edu.my</a>
+        </div>
+      </div>
+
     </div>
 
   </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: yourname@email.com</p>
-  <p>GitHub: github.com/yourusername</p>
-</section>
+</div>
 
 <footer>
-  © 2026 Che Faris | Portfolio
+  &copy; 2026 Che Faris Iskandar · All rights reserved
 </footer>
 
 </body>
